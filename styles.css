@@ -3,14 +3,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.8;
-    background-image: url("https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg");
-    background-color: rgba(204, 204, 204, 0.7); 
-    background-blend-mode: overlay;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    height: 100vhl;
-    display: flex;
-    flex-direction: column; 
+
 }
 
 header {
