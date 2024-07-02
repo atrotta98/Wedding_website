@@ -3,41 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Wedding Seating Arrangement</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        header{
-                background-image: url("https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg");
-                background-color: rgba(204, 204, 204, 0.7); 
-                background-blend-mode: overlay;
-                background-position: center; 
-                background-repeat: no-repeat; 
-                background-size:cover;
-                display: flex;
-                flex-direction: column; 
-                color:#000000;
-                font-size: 30px;
-                font-style: italic;
-                font-wight: bold;
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            color: #eee;
+            background-color: #2a2a2a;
         }
-        footer{
-                background-image: url("https://cdn.pixabay.com/photo/2015/12/15/05/43/starry-night-1093721_960_720.jpg");
-                background-color: rgba(204, 204, 204, 0.7); 
-                background-blend-mode: overlay;
-                background-position: center; 
-                background-repeat: no-repeat; 
-                background-size:cover;
-                display: flex;
-                flex-direction: column; 
-                color:#000000;
-                font-size: 15px;
-                font-style: italic;
-                text-align: center;
-
-            padding: 0rem 0;
-
-    width: 100%;
-    bottom: 0;
+        header {
+            background-image: url("https://cdn.pixabay.com/photo/2016/11/22/07/09/wedding-1846114_960_720.jpg");
+            background-color: rgba(0, 0, 0, 0.7);
+            background-blend-mode: overlay;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 1px 1px 4px #000;
+            height: 250px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+            font-size: 28px;
+            font-family: 'Dancing Script', cursive;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        nav ul li:hover {
+            transform: scale(1.2);
+            color: #ff9bb3;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        main h1 {
+            font-size: 36px;
+            color: #ddd;
+            font-family: 'Dancing Script', cursive;
+            margin-bottom: 10px;
+        }
+        main p {
+            font-size: 18px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+        form {
+            margin-top: 20px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #444;
+            color: #eee;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #ff9bb3;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #ff6f91;
+            transform: scale(1.1);
+        }
+        footer {
+            background-image: url("https://cdn.pixabay.com/photo/2016/11/22/07/09/wedding-1846114_960_720.jpg");
+            background-color: rgba(0, 0, 0, 0.7);
+            background-blend-mode: overlay;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 1px 1px 4px #000;
+            height: 100px;
+            padding: 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -45,7 +124,7 @@
     <header>
         <nav>
             <ul>
-                <li>Alessandro & Giulia </li>
+                <li>Giulia & Alessandro</li>
             </ul>
         </nav>
     </header>
@@ -55,10 +134,34 @@
             <h1>Cerca qui il tuo posto a tavola!</h1>
             <p>Scrivi il tuo nome e cognome!</p>
             <p>Ti guideremo alla ricerca del tuo tavolo</p>
+            <form>
+                <input type="text" name="name" placeholder="Nome e Cognome">
+                <button type="submit">Cerca</button>
+            </form>
         </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Alessandro & Giulia. All rights reserved.</p>
+        <p>&copy; 2024 scemo chi legge. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Fade in effect for header and footer
+        window.addEventListener('load', () => {
+            document.querySelector('header').style.opacity = 1;
+            document.querySelector('footer').style.opacity = 1;
+        });
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = e.target.elements.name.value;
+            if (name) {
+                alert(`Benvenuto, ${name}!`);
+            } else {
+                alert('Per favore, inserisci il tuo nome e cognome.');
+            }
+        });
+    </script>
 </body>
 </html>
