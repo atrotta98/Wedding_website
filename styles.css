@@ -3,10 +3,11 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.8;
+     background-image: url("paper.gif");
 }
 
 header {
-    background: #526def;
+    background: #0316c3;
     color: #fff;
     padding: 1rem 0;
 }
@@ -35,7 +36,7 @@ section {
 }
 
 footer {
-    background:  #526def;
+    background:  #0316c3;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
