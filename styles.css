@@ -8,6 +8,7 @@ body {
     background-blend-mode: overlay;
     background-position: center; 
     background-repeat: no-repeat; 
+    height: 100vhl;
     display: flex;
     flex-direction: column; 
 }
